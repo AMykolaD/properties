@@ -2,5 +2,9 @@
 name = "properties-file-parser"
 version = "0.1.0"
 edition = "2021"
+description = "The goal of this Rust project is to be able to parse .properties file (https://en.wikipedia.org/wiki/.properties)"
 
 [dependencies]
+anyhow = "1.0.91"
+pest = "2.7.14"
+pest_derive = "2.7.14"
