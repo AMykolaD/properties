@@ -15,7 +15,7 @@ fn main() {
             Ok(i) => i,
             Err(err) => {
                 println!("File reading failed, error:");
-                println!("{:?}", err);
+                println!("{:?}", err.to_string());
                 return;
             }
         };
@@ -32,7 +32,7 @@ fn main() {
                         }
                         Err(err) => {
                             println!("Writing result to file failed, error:");
-                            println!("{:?}", err);
+                            println!("{:?}", err.to_string());
                             return;
                         }
                     }
@@ -40,7 +40,7 @@ fn main() {
             }
             Err(err) => {
                 println!("File parsing failed, error:");
-                println!("{:?}", err);
+                println!("{:?}", err.to_string());
                 return;
             }
         }

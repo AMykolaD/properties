@@ -1,7 +1,17 @@
+///Parses comment, which can start with # or !
 comment = _{spaces* ~ ("#"|"!") ~ (!NEWLINE ~ ANY)*}
+///One or more spaces or tabs
 spaces = _{(" "|"\t")+}
+///property, which is:
+///key=value, OR
+///key: value, OR
+///key value
 property = {spaces* ~ key ~ ((spaces* ~ ("="|":"))|(spaces*)) ~ spaces* ~ value ~ spaces*}
+///key in property
 key = {(ASCII_ALPHANUMERIC | "_")+}
+///value in property
 value = {(!NEWLINE ~ ANY)*}
+///parses the whole file .properties
 file = { SOI ~ (spaces | NEWLINE | comment | property)* ~ silentEOI }
+///used in order not to get "EOI" in output
 silentEOI = _{!ANY}
