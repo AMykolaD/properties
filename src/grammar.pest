@@ -1,1 +1,7 @@
-comment = {(" ")* ~ ("#"|"!") ~ (!NEWLINE ~ ANY)*}
+comment = _{spaces* ~ ("#"|"!") ~ (!NEWLINE ~ ANY)*}
+spaces = _{(" "|"\t")+}
+property = {spaces* ~ key ~ ((spaces* ~ ("="|":"))|(spaces*)) ~ spaces* ~ value ~ spaces*}
+key = {(ASCII_ALPHANUMERIC | "_")+}
+value = {(!NEWLINE ~ ANY)*}
+file = { SOI ~ (spaces | NEWLINE | comment | property)* ~ silentEOI }
+silentEOI = _{!ANY}
