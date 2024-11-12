@@ -1,6 +1,9 @@
 # properties-file-parser
 ## Description
-The goal of this Rust project is to parse .properties file (https://en.wikipedia.org/wiki/.properties)
+The goal of this Rust project is to parse .properties file (https://en.wikipedia.org/wiki/.properties)\
+\
+This project is uploaded on crates.io:\
+https://crates.io/crates/properties-file-parser
 
 ## Grammar
 This project is created with pest crate.
