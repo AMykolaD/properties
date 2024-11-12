@@ -3,6 +3,7 @@ name = "properties-file-parser"
 version = "0.1.0"
 edition = "2021"
 description = "The goal of this Rust project is to parse .properties file (https://en.wikipedia.org/wiki/.properties)"
+license = "MIT"
 
 [dependencies]
 anyhow = "1.0.91"
