@@ -4,7 +4,7 @@ mod tests {
     use properties_file_parser::{parse_properties, Grammar, Property, Rule};
 
     #[test]
-    fn test_comment_rule() -> anyhow::Result<()> {
+    fn test_comment_parsing() -> anyhow::Result<()> {
         assert!(!Grammar::parse(Rule::comment, "# abcde\n something_else").is_err());
         assert!(!Grammar::parse(Rule::comment, "! abc").is_err());
         assert!(Grammar::parse(Rule::comment, "abcde \n something_else").is_err());
@@ -16,7 +16,7 @@ mod tests {
     }
 
     #[test]
-    fn test_spaces() -> anyhow::Result<()> {
+    fn test_spaces_parsing() -> anyhow::Result<()> {
         assert!(!Grammar::parse(Rule::spaces, " ").is_err());
         assert!(!Grammar::parse(Rule::spaces, "     ").is_err());
         assert!(Grammar::parse(Rule::spaces, "row").is_err());
@@ -71,6 +71,14 @@ mod tests {
                               Property{key: "key3".to_string(), value: "".to_string()},
                               Property{key: "key4".to_string(), value: "".to_string()}];
         assert_eq!(parsed, true_value);
+        Ok(())
+    }
+
+    #[test]
+    fn test_silent_eoi_parsing() -> anyhow::Result<()>{
+        assert!(!Grammar::parse(Rule::silentEOI, "").is_err());
+        assert!(Grammar::parse(Rule::silentEOI, "i").is_err());
+        assert!(Grammar::parse(Rule::silentEOI, " ").is_err());
         Ok(())
     }
 }
