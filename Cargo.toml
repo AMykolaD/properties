@@ -1,6 +1,6 @@
 [package]
 name = "properties-file-parser"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 description = "This is a project for .properties file parsing (https://en.wikipedia.org/wiki/.properties)"
 license = "MIT"

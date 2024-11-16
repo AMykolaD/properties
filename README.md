@@ -1,8 +1,7 @@
 # properties-file-parser
 ## Overview
 ### Brief description
-This is a project for .properties file parsing (https://en.wikipedia.org/wiki/.properties)
-\
+This is a project for .properties file parsing (https://en.wikipedia.org/wiki/.properties) \
 This project is uploaded on crates.io:\
 https://crates.io/crates/properties-file-parser
 ### .properties
