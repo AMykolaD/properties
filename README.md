@@ -44,7 +44,7 @@ age=     "35"
 This project's main purpose is to allow Rust users to parse 
 .properties and use the results in their own code.
 ## Project structure
-The project structure is following:
+The project structure is following: \
 ![img.png](img.png)
 ### grammar.pest
 File which includes all pest grammar
