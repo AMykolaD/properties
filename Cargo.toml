@@ -1,11 +1,12 @@
 [package]
 name = "properties-file-parser"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
-description = "The goal of this Rust project is to parse .properties file (https://en.wikipedia.org/wiki/.properties)"
+description = "This is a project for .properties file parsing (https://en.wikipedia.org/wiki/.properties)"
 license = "MIT"
 
 [dependencies]
 anyhow = "1.0.91"
 pest = "2.7.14"
 pest_derive = "2.7.14"
+thiserror = "2.0.3"
